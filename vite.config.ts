@@ -6,6 +6,7 @@ import { defineConfig } from "vite";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
+  base: "/gepala.github.io",
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
