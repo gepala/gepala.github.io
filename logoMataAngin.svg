@@ -1,0 +1,27 @@
+<svg width="900" height="550" viewBox="-900 -550 1800 1100" xmlns="http://www.w3.org/2000/svg">
+  <g fill="yellow" stroke="none">
+    <!-- Belah ketupat atas -->
+    <polygon points="0,-550 -200,-350 0,0 200,-350" />
+    <!-- Belah ketupat kanan -->
+    <polygon points="900,0 580,-110 0,0 580,110" />
+    <!-- Belah ketupat bawah -->
+    <polygon points="0,550 205,350 0,0 -200,350" />
+    <!-- Belah ketupat kiri -->
+    <polygon points="-900,0 -580,110 0,0 -580,-110" />
+  </g>
+
+  <!-- Garis di antara belah ketupat -->
+  <g stroke="yellow" stroke-width="18">
+    <line x1="-400" y1="200" x2="400" y2="-200" />
+    <line x1="-400" y1="-200" x2="400" y2="200" />
+  </g>
+
+  <!-- Garis kecil di ujung garis-->
+  <g stroke="yellow" stroke-width="24">
+    <line x1="375" y1="225" x2="415" y2="170" />
+    <line x1="375" y1="-225" x2="415" y2="-170" />
+    <line x1="-375" y1="225" x2="-415" y2="170" />
+    <line x1="-375" y1="-225" x2="-415" y2="-170" />
+  </g>
+
+</svg>
