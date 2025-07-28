@@ -25,7 +25,7 @@ import FAQ from "./homepage/FAQ";
 const CompassLogo = ({ className }: { className?: string }) => (
   <svg
     width="300"
-    height="auto"
+    height="200"
     viewBox="-900 -550 1800 1100"
     xmlns="http://www.w3.org/2000/svg"
     className={className}
