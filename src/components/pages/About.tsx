@@ -1,26 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
-import { Badge } from "../ui/badge";
 import AdminLoginButton from "../AdminLoginButton";
 
 export default function About() {
-  const kepaPaItems = [
-    "Mengabdi kepada Tuhan Yang Maha Esa.",
-    "Memelihara alam serta isinya serta mempergunakan sumber alam sesuai batas kebutuhan.",
-    "Mengabdi kepada Bangsa dan Tanah Air.",
-    "Menghormati tata kehidupan yang berlaku pada masyarakat sekitarnya, serta menghargai manusia sesuai martabatnya.",
-    "Berusaha mempererat tali persaudaraan sesama pecinta alam, sesuai dengan azaz dan tujuan pecinta alam.",
-    "Berusaha saling membantu dan saling menghargai dalam pelaksanaan pengabdian terhadap Tuhan, Bangsa dan Tanah Air.",
-    "Selesai.",
-  ];
-
-  const hakkatGepala = [
-    "GEPALA bertakwa kepada Tuhan Yang Maha Esa.",
-    "GEPALA cinta Bangsa dan Tanah Air.",
-    "GEPALA berani, tabah, dan ulet dalam menghadapi persoalan.",
-    "GEPALA selalu siap menolong dan membantu sesama makhluk.",
-    "GEPALA selalu menjaga dan menjunjung tinggi SMAN 15 Bandung dan nama organisasi.",
-  ];
-
   return (
     <div className="min-h-screen pt-20">
       {/* Header */}

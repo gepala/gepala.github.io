@@ -18,7 +18,7 @@ import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
 import { Label } from "../ui/label";
 import { toast } from "sonner";
-import React from "react";
+
 import AdminLoginButton from "../AdminLoginButton";
 import FAQ from "./homepage/FAQ";
 
@@ -229,7 +229,7 @@ export default function Homepage() {
                 Perhimpunan Pendaki Gunung dan Penempuh Rimba
               </h1>
               <h2
-                className="text-4xl md:text-6xl tracking-[0.3em] mb-6 animate-fadein-text h1"
+                className="text-4xl md:text-6xl tracking-[0.3em] mb-6 animate-fadein-text"
                 style={{ marginLeft: "0.15em" }}
               >
                 G E P A L A

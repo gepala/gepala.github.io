@@ -8,7 +8,6 @@ import {
   DialogHeader,
   DialogTitle,
   DialogDescription,
-  DialogFooter,
 } from "./ui/dialog";
 import {
   AlertDialog,
@@ -25,7 +24,7 @@ import { useAuth } from "../App";
 import { toast } from "sonner";
 
 export default function AdminLoginButton() {
-  const { login, logout, isAuthenticated, currentUser } = useAuth();
+  const { login, logout, isAuthenticated } = useAuth();
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isLogoutConfirmOpen, setIsLogoutConfirmOpen] = useState(false);
   const [loginForm, setLoginForm] = useState({ id: "", password: "" });

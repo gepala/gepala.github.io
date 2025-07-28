@@ -9,8 +9,7 @@ import {
   DialogTitle,
   DialogDescription,
 } from "../ui/dialog";
-import { Label } from "../ui/label";
-import { Input } from "../ui/input";
+
 import { Badge } from "../ui/badge";
 import { Plus, Edit, Trash, Calendar, Images, X } from "lucide-react";
 import { useApp, useAuth } from "../../App";

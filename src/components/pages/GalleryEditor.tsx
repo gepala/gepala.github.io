@@ -5,7 +5,7 @@ import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
 import { Label } from "../ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
-import { ArrowLeft, Save, Plus, Minus, Upload, X } from "lucide-react";
+import { ArrowLeft, Save, Upload, X } from "lucide-react";
 import { useApp, useAuth } from "../../App";
 import { toast } from "sonner";
 
