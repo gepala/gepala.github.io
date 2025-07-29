@@ -10,6 +10,7 @@ import {
   Handshake,
   Brain,
   Flag,
+  BookOpenText,
 } from "lucide-react";
 import { Button } from "../ui/button";
 import { Card, CardContent } from "../ui/card";
@@ -17,7 +18,6 @@ import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
 import { Label } from "../ui/label";
 import { toast } from "sonner";
-
 import AdminLoginButton from "../AdminLoginButton";
 import FAQ from "./homepage/FAQ";
 
@@ -151,6 +151,12 @@ const benefits = [
     description: "Mengembangkan kemampuan leadership dan manajemen organisasi",
   },
   {
+    icon: BookOpenText,
+    title: "Pengetahuan",
+    description:
+      "Mendapatkan ilmu tentang kepecintaalaman dan lingkungan hidup",
+  },
+  {
     icon: Brain,
     title: "Karakter",
     description:
@@ -275,8 +281,8 @@ export default function Homepage() {
             <p className="text-lg text-gray-300 leading-relaxed mb-8 text-justify">
               GEPALA merupakan ekstrakurikuler pecinta alam di SMAN 15 Bandung
               yang sudah berdiri sejak 20 Juli 1982 dan merupakan
-              ekstrakurikuler tertua di SMAN 15 Bandung. Selama lebih dari 40
-              tahun, GEPALA telah menjadi wadah bagi para siswa untuk
+              ekstrakurikuler tertua di SMAN 15 Bandung. Selama bertahun-tahun,
+              GEPALA telah menjadi wadah bagi para anggotanya untuk
               mengembangkan kecintaan terhadap alam, membangun karakter yang
               tangguh, dan menjalin persaudaraan yang erat.
             </p>
@@ -409,7 +415,7 @@ export default function Homepage() {
                       </div>
                       <div>
                         <Label htmlFor="from" className="block mb-2">
-                          Sebagai
+                          Dari
                         </Label>
                         <Input
                           id="from"

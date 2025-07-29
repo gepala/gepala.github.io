@@ -33,7 +33,8 @@ export default function Footer() {
               <p className="text-sm text-gray-400 text-justify">
                 GEPALA merupakan ekstrakurikuler pecinta alam di SMAN 15 Bandung
                 yang sudah berdiri sejak 20 Juli 1982 dan merupakan
-                ekstrakurikuler tertua di SMAN 15 Bandung.<br></br>
+                ekstrakurikuler tertua di SMAN 15 Bandung.
+                <br />
               </p>
             </div>
 

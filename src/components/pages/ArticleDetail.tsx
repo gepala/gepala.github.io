@@ -3,6 +3,7 @@ import { Button } from "../ui/button";
 import { Badge } from "../ui/badge";
 import { ArrowLeft, Calendar, User, Users, Edit } from "lucide-react";
 import { useApp, useAuth } from "../../App";
+import HeaderGlobal from "../HeaderGlobal";
 import { formatCohortDisplay } from "../../lib/utils";
 
 export default function ArticleDetail() {
@@ -36,7 +37,14 @@ export default function ArticleDetail() {
   };
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen relative">
+      <HeaderGlobal
+        {...{
+          title: "Kegiatan GEPALA",
+          description:
+            "Kumpulan kegiatan rutin, tahunan, dan insidental yang dilakukan oleh GEPALA untuk meningkatkan kemampuan kepecintaalaman dan kepedulian sosial.",
+        }}
+      />
       <article className="py-12 bg-gray-900">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">

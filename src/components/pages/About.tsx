@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import AdminLoginButton from "../AdminLoginButton";
+import HeaderGlobal from "../HeaderGlobal";
 import { useEffect } from "react";
 
 export default function About() {
@@ -42,22 +43,14 @@ export default function About() {
   }, []);
 
   return (
-    <div className="min-h-screen pt-20">
-      {/* Header */}
-      <section className="py-20 bg-gray-800">
-        <div className="container mx-auto px-4">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl mb-6 text-yellow-500">
-              Tentang Kami
-            </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Mengenal lebih dalam tentang Pecinta Alam Indonesia dan
-              Perhimpunan Pendaki Gunung dan Penempuh Rimba GEPALA
-            </p>
-          </div>
-        </div>
-      </section>
-
+    <div className="min-h-screen relative">
+      <HeaderGlobal
+        {...{
+          title: "Tentang Kami",
+          description:
+            "Mengenal lebih dalam tentang Pecinta Alam Indonesia dan Perhimpunan Pendaki Gunung dan Penempuh Rimba GEPALA",
+        }}
+      />
       {/* Pecinta Alam */}
       <section className="py-20 bg-gray-900">
         <div className="container mx-auto px-4">
@@ -265,19 +258,42 @@ export default function About() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-300 leading-relaxed text-justify">
-                  Awalnya, organisasi ini bernama{" "}
-                  <strong className="text-yellow-500">Pelanda Giri</strong>,
-                  kemudian berganti menjadi{" "}
-                  <strong className="text-yellow-500">
-                    SMC (Student Mountaineering Club){" "}
-                  </strong>
-                  dan akhirnya menjadi{" "}
-                  <strong className="text-yellow-500">
-                    Perhimpunan Pendaki Gunung dan Penempuh Rimba GEPALA
-                  </strong>
-                  .
-                </p>
+                <div className="text-gray-300 leading-relaxed text-justify space-y-4">
+                  <p>
+                    GEPALA bermula dari obrolan santai sekelompok siswa SMAN 15
+                    yang sering berkumpul di warung/kantin sekolah sekitar tahun
+                    1982. Awalnya, mereka bercanda tentang ide membentuk grup
+                    pencinta alam, lalu sepakat mewujudkannya. Nama grup ini
+                    mengalami beberapa perubahan—mulai dari{" "}
+                    <strong className="text-yellow-500">
+                      PELANDA GIRI (Pelajar Pendaki Gunung)
+                    </strong>
+                    , kemudian{" "}
+                    <strong className="text-yellow-500">
+                      SMC (Student Mountaineering Club)
+                    </strong>
+                    , hingga akhirnya menjadi{" "}
+                    <strong className="text-yellow-500">GEPALA</strong>, yang
+                    diambil dari bahasa Sunda (Gep = tangkap, Ala = ambil).
+                  </p>
+                  <p>
+                    Setelah mendapat persetujuan dari kesiswaan, GEPALA resmi
+                    berdiri pada Juli 1982. Angkatan pertama memulai perjalanan
+                    panjang dengan semangat eksplorasi alam dan kekeluargaan.
+                    Meski menghadapi tantangan, GEPALA terus berkembang, menjaga
+                    nilai-nilai kecintaan terhadap alam serta prinsip:{" "}
+                    <em className="text-yellow-400">
+                      "Teangan elmu sing katimu, Tangan pangabisa sing karasa,
+                      Teangan pangarti sing kaharti"
+                    </em>{" "}
+                    (Carilah ilmu yang bermanfaat, Rasakan kemampuan yang
+                    dimiliki, Pahami makna yang tersirat).
+                  </p>
+                  <p>
+                    Hingga kini, GEPALA tetap berproses, mewariskan semangat
+                    petualangan dan kebersamaan kepada setiap angkatan baru.
+                  </p>
+                </div>
               </CardContent>
             </Card>
 

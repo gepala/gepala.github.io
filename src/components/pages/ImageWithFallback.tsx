@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const ERROR_IMG_SRC = "./assets/images/error.png";
+const ERROR_IMG_SRC = "/error.png";
 
 export function ImageWithFallback(
   props: React.ImgHTMLAttributes<HTMLImageElement>

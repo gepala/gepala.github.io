@@ -111,7 +111,7 @@ export default function GalleryEditor() {
   };
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen pt-20 relative">
       <section className="py-12 bg-gray-900">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">

@@ -15,6 +15,7 @@ import { Plus, Edit, Trash, Calendar, Images, X } from "lucide-react";
 import { useApp, useAuth } from "../../App";
 import { toast } from "sonner";
 import { ImageWithFallback } from "./ImageWithFallback";
+import HeaderGlobal from "../HeaderGlobal";
 import AdminLoginButton from "../AdminLoginButton";
 
 export default function Gallery() {
@@ -41,21 +42,14 @@ export default function Gallery() {
   };
 
   return (
-    <div className="min-h-screen pt-20">
-      {/* Header */}
-      <section className="py-20 bg-gray-800">
-        <div className="container mx-auto px-4">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl mb-6 text-yellow-500">
-              Galeri GEPALA
-            </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Dokumentasi kegiatan, ekspedisi, dan momen-momen berharga dalam
-              perjalanan GEPALA selama bertahun-tahun
-            </p>
-          </div>
-        </div>
-      </section>
+    <div className="min-h-screen relative">
+      <HeaderGlobal
+        {...{
+          title: "Galeri GEPALA",
+          description:
+            "Dokumentasi perjalanan, kebersamaan, dan momen-momen berharga dalam kehidupan GEPALA dari masa ke masa.",
+        }}
+      />
 
       {/* Gallery Grid */}
       <section className="py-20 bg-gray-900">

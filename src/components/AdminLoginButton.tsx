@@ -79,7 +79,7 @@ export default function AdminLoginButton() {
           <LogIn className="w-5 h-5 flex-shrink-0 transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]" />
         )}
         <span className="text-xs font-medium opacity-0 group-hover:opacity-100 transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] whitespace-nowrap overflow-hidden ml-2 w-0 group-hover:w-auto">
-          {isAuthenticated ? "Logout" : "Admin"}
+          {isAuthenticated ? "Logout" : "Login"}
         </span>
       </button>
 

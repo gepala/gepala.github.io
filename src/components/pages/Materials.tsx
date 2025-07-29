@@ -10,6 +10,7 @@ import {
   Mountain,
   Users,
 } from "lucide-react";
+import HeaderGlobal from "../HeaderGlobal";
 import AdminLoginButton from "../AdminLoginButton";
 
 interface Material {
@@ -123,21 +124,14 @@ const materials: Material[] = [
 
 export default function Materials() {
   return (
-    <div className="min-h-screen pt-20">
-      {/* Header */}
-      <section className="py-20 bg-gray-800">
-        <div className="container mx-auto px-4">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl mb-6 text-yellow-500">
-              Materi Kepecintaalaman dan Keorganisasian
-            </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Kumpulan materi lengkap untuk mengembangkan kemampuan
-              kepecintaalaman dan pemahaman organisasi GEPALA
-            </p>
-          </div>
-        </div>
-      </section>
+    <div className="min-h-screen pt-20 relative">
+      <HeaderGlobal
+        {...{
+          title: "Materi Kepecintaalaman dan Keorganisasian",
+          description:
+            "Mengenal lebih dalam tentang Pecinta Alam Indonesia dan Perhimpunan Pendaki Gunung dan Penempuh Rimba GEPALA",
+        }}
+      />
 
       {/* Materials Grid */}
       <section className="py-20 bg-gray-900">

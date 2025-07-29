@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { useApp, useAuth } from "../../App";
 import { toast } from "sonner";
+import HeaderGlobal from "../HeaderGlobal";
 import AdminLoginButton from "../AdminLoginButton";
 import { formatCohortDisplay } from "../../lib/utils";
 
@@ -57,21 +58,14 @@ export default function Articles() {
   };
 
   return (
-    <div className="min-h-screen pt-20">
-      {/* Header */}
-      <section className="py-20 bg-gray-800">
-        <div className="container mx-auto px-4">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl mb-6 text-yellow-500">
-              Artikel
-            </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Kumpulan artikel dan tulisan tentang kepecintaalaman, pengalaman
-              pendakian, dan kehidupan organisasi GEPALA
-            </p>
-          </div>
-        </div>
-      </section>
+    <div className="min-h-screen relative">
+      <HeaderGlobal
+        {...{
+          title: "Artikel",
+          description:
+            "Kumpulan artikel dan tulisan tentang kepecintaalaman, pengalaman pendakian, dan kehidupan organisasi GEPALA.",
+        }}
+      />
 
       {/* Search */}
       <section className="py-8 bg-gray-900">

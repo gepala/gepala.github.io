@@ -166,7 +166,11 @@ export default function App() {
   const login = (id: string, password: string): boolean => {
     const users = [
       { id: "dp", password: "Sejak1982", name: "Dewan Pengurus" },
-      { id: "mppo", password: "TabahSampaiAkhir", name: "MPPO" },
+      {
+        id: "mppo",
+        password: "TabahSampaiAkhir",
+        name: "Majelis Pengawas dan Pertimbangan Organisasi",
+      },
     ];
 
     const user = users.find((u) => u.id === id && u.password === password);
@@ -251,7 +255,15 @@ export default function App() {
               </Routes>
             </main>
             <Footer />
-            <Toaster />
+            <Toaster
+              closeButton
+              toastOptions={{
+                classNames: {
+                  closeButton:
+                    "!rounded-full !border-0 !bg-gray-100 !text-black hover:!bg-gray-600 hover:!text-white",
+                },
+              }}
+            />
           </div>
         </Router>
       </AppContext.Provider>

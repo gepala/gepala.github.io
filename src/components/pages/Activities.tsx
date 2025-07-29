@@ -11,13 +11,14 @@ import {
   Clock,
 } from "lucide-react";
 import { ImageWithFallback } from "./ImageWithFallback";
+import HeaderGlobal from "../HeaderGlobal";
 import AdminLoginButton from "../AdminLoginButton";
 
 interface Activity {
   id: string;
   name: string;
   description: string;
-  type: "tahunan" | "bulanan" | "insidental" | "tentatif";
+  type: "internal" | "eksternal";
   image: string;
   details: {
     frequency: string;
@@ -32,90 +33,90 @@ const activities: Activity[] = [
     id: "diklat",
     name: "Pendidikan dan Latihan Dasar",
     description:
-      "Program kaderisasi untuk calon anggota baru GEPALA. Meliputi materi kepecintaalaman, keorganisasian, dan praktik lapangan.",
-    type: "tahunan",
+      "Program kaderisasi awal tahununtuk calon anggota GEPALA, yang meliputi pembentukan mental dan melatih keterampilan dasar kepecintaalaman.",
+    type: "internal",
     image:
       "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=600&q=80",
     details: {
-      frequency: "Setiap tahun ajaran baru",
-      participants: "Calon anggota baru",
-      duration: "2-3 bulan",
-      location: "SMAN 15 Bandung & Alam",
+      frequency: "Setelah Awal Tahun Ajaran Baru",
+      participants: "Siswa GEPALA",
+      duration: "3-4 bulan",
+      location: "SMAN 15 Bandung & Alam Terbuka",
     },
   },
   {
-    id: "bimbingan",
+    id: "mabim",
     name: "Masa Bimbingan",
     description:
-      "Periode pendampingan intensif untuk anggota muda dalam mengembangkan kemampuan kepecintaalaman.",
-    type: "tahunan",
+      "Periode pendampingan intensif untuk anggota muda dalam mengembangkan sikap, pengetahuan, dan keterampilan kepecintaalaman.",
+    type: "internal",
     image:
       "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=600&q=80",
     details: {
-      frequency: "Pasca Diklat Dasar",
+      frequency: "Pasca Diklatsar",
       participants: "Anggota Muda GEPALA",
-      duration: "6 bulan",
-      location: "SMAN 15 Bandung & Alam",
+      duration: "3-4 bulan",
+      location: "SMAN 15 Bandung & Alam Terbuka",
     },
   },
   {
     id: "pengembaraan",
     name: "Pengembaraan",
     description:
-      "Kegiatan penjelajahan alam untuk meningkatkan kemampuan survival dan navigasi anggota.",
-    type: "bulanan",
+      "Kegiatan perjalanan untuk menguji kemampuan anggota muda dalam berkegiatan di alam terbuka dan berorganisasi.",
+    type: "internal",
     image:
       "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80",
     details: {
-      frequency: "Setiap bulan",
-      participants: "Seluruh anggota",
-      duration: "2-3 hari",
-      location: "Berbagai lokasi alam",
+      frequency: "Pasca Mabim, Tentatif",
+      participants: "Anggota Muda GEPALA",
+      duration: "2 bulan",
+      location: "SMAN 15 Bandung & Alam Terbuka",
     },
   },
   {
     id: "ekspedisi",
     name: "Ekspedisi",
     description:
-      "Perjalanan pendakian ke gunung-gunung tinggi untuk menguji kemampuan dan mental anggota.",
-    type: "tahunan",
+      "Petualangan menjelajahi alam terbuka dengan tujuan penelitian, konservasi, eksplorasi, atau lainnya.",
+    type: "internal",
     image:
       "https://images.unsplash.com/photo-1551632811-561732d1e306?w=600&q=80",
     details: {
-      frequency: "2-3 kali per tahun",
-      participants: "Anggota berpengalaman",
-      duration: "5-10 hari",
-      location: "Gunung-gunung tinggi",
+      frequency: "Tentatif",
+      participants: "Anggota GEPALA",
+      duration: "Tentatif",
+      location: "Alam Terbuka",
     },
   },
   {
     id: "hut",
     name: "HUT GEPALA",
     description:
-      "Perayaan ulang tahun GEPALA yang diisi dengan berbagai kegiatan dan reuni alumni.",
-    type: "tahunan",
+      "Perayaan hari jadi GEPALA yang diisi dengan hangatnya kebersamaan, refleksi perjalanan organisasi, dan simbolisme perayaan.",
+    type: "internal",
     image:
       "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=600&q=80",
     details: {
       frequency: "Setiap 20 Juli",
-      participants: "Anggota & Alumni",
-      duration: "1 hari",
-      location: "SMAN 15 Bandung",
+      participants: "Anggota GEPALA",
+      duration: "2 hari",
+      location: "Alam Terbuka",
     },
   },
   {
-    id: "bukber",
-    name: "Buka Bersama",
+    id: "gathering",
+    name: "Gathering",
     description:
-      "Kegiatan buka puasa bersama untuk mempererat silaturahmi antar anggota selama bulan Ramadhan.",
-    type: "tahunan",
+      "Kegiatan kumpul bersama untuk mempererat silaturahmi antar anggota.",
+    type: "internal",
     image:
       "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=600&q=80",
     details: {
-      frequency: "Selama Ramadhan",
-      participants: "Seluruh anggota",
-      duration: "1 malam",
-      location: "SMAN 15 Bandung",
+      frequency: "Setiap Tahun",
+      participants: "Anggota GEPALA",
+      duration: "1-2 hari",
+      location: "Tentatif",
     },
   },
   {
@@ -123,29 +124,29 @@ const activities: Activity[] = [
     name: "Bakti Sosial",
     description:
       "Kegiatan pengabdian kepada masyarakat sebagai wujud kepedulian sosial anggota GEPALA.",
-    type: "bulanan",
+    type: "eksternal",
     image:
       "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&q=80",
     details: {
-      frequency: "Bulanan",
-      participants: "Seluruh anggota",
-      duration: "1 hari",
-      location: "Masyarakat sekitar",
+      frequency: "Setiap Tahun",
+      participants: "Anggota GEPALA",
+      duration: "1-2 hari",
+      location: "Masyarakat Sekitar",
     },
   },
   {
-    id: "bantuan",
+    id: "kebencanaan",
     name: "Bantuan Kemanusiaan Pasca Bencana",
     description:
       "Tim siaga untuk membantu korban bencana alam dengan kemampuan survival dan SAR.",
-    type: "insidental",
+    type: "eksternal",
     image:
       "https://images.unsplash.com/photo-1593113598332-cd288d649433?w=600&q=80",
     details: {
-      frequency: "Saat diperlukan",
-      participants: "Tim khusus",
-      duration: "Sesuai kebutuhan",
-      location: "Lokasi bencana",
+      frequency: "Insidental",
+      participants: "Anggota GEPALA",
+      duration: "Menyesuaikan",
+      location: "Lokasi Bencana",
     },
   },
   {
@@ -153,30 +154,26 @@ const activities: Activity[] = [
     name: "Latihan Bersama",
     description:
       "Latihan rutin bersama organisasi pecinta alam lain untuk sharing knowledge dan mempererat persaudaraan.",
-    type: "tentatif",
+    type: "eksternal",
     image:
       "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80",
     details: {
-      frequency: "Berdasarkan undangan",
-      participants: "Perwakilan anggota",
-      duration: "2-3 hari",
-      location: "Berbagai tempat",
+      frequency: "Tentatif",
+      participants: "Anggota GEPALA & Organisasi Lain",
+      duration: "Tentatif",
+      location: "Tentatif",
     },
   },
 ];
 
 const typeColors = {
-  tahunan: "bg-blue-500",
-  bulanan: "bg-green-500",
-  insidental: "bg-red-500",
-  tentatif: "bg-yellow-500",
+  internal: "bg-blue-500",
+  eksternal: "bg-green-500",
 };
 
 const typeLabels = {
-  tahunan: "Tahunan",
-  bulanan: "Bulanan",
-  insidental: "Insidental",
-  tentatif: "Tentatif",
+  internal: "Internal",
+  eksternal: "Eksternal",
 };
 
 export default function Activities() {
@@ -187,6 +184,11 @@ export default function Activities() {
     selectedFilter === "semua"
       ? activities
       : activities.filter((activity) => activity.type === selectedFilter);
+
+  const handleFilterChange = (filter: string) => {
+    setSelectedFilter(filter);
+    setCurrentIndex(0);
+  };
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % filteredActivities.length);
@@ -204,21 +206,14 @@ export default function Activities() {
   };
 
   return (
-    <div className="min-h-screen pt-20">
-      {/* Header */}
-      <section className="py-20 bg-gray-800">
-        <div className="container mx-auto px-4">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl mb-6 text-yellow-500">
-              Kegiatan GEPALA
-            </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Berbagai kegiatan kepecintaalaman dan keorganisasian yang mengasah
-              kemampuan dan mempererat persaudaraan anggota GEPALA
-            </p>
-          </div>
-        </div>
-      </section>
+    <div className="min-h-screen relative">
+      <HeaderGlobal
+        {...{
+          title: "Kegiatan GEPALA",
+          description:
+            "Kumpulan kegiatan rutin, tahunan, dan insidental yang dilakukan oleh GEPALA untuk meningkatkan kemampuan kepecintaalaman dan kepedulian sosial.",
+        }}
+      />
 
       {/* Filter */}
       <section className="py-8 bg-gray-900">
@@ -226,7 +221,7 @@ export default function Activities() {
           <div className="flex flex-wrap justify-center gap-4">
             <Button
               variant={selectedFilter === "semua" ? "default" : "outline"}
-              onClick={() => setSelectedFilter("semua")}
+              onClick={() => handleFilterChange("semua")}
               className={
                 selectedFilter === "semua"
                   ? "bg-yellow-500 text-black"
@@ -239,7 +234,7 @@ export default function Activities() {
               <Button
                 key={key}
                 variant={selectedFilter === key ? "default" : "outline"}
-                onClick={() => setSelectedFilter(key)}
+                onClick={() => handleFilterChange(key)}
                 className={
                   selectedFilter === key
                     ? "bg-yellow-500 text-black"
@@ -261,7 +256,7 @@ export default function Activities() {
               {/* Main Activity Card */}
               <Card className="mb-8 bg-gray-800 border-gray-700 overflow-hidden">
                 <div className="grid md:grid-cols-2 gap-0">
-                  <div className="relative h-64 md:h-auto">
+                  <div className="relative h-64 md:h-96">
                     <ImageWithFallback
                       src={filteredActivities[currentIndex].image}
                       alt={filteredActivities[currentIndex].name}
