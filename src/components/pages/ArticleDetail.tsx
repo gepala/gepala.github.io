@@ -3,6 +3,7 @@ import { Button } from "../ui/button";
 import { Badge } from "../ui/badge";
 import { ArrowLeft, Calendar, User, Users, Edit } from "lucide-react";
 import { useApp, useAuth } from "../../App";
+import { formatCohortDisplay } from "../../lib/utils";
 
 export default function ArticleDetail() {
   const { id } = useParams<{ id: string }>();
@@ -99,7 +100,8 @@ export default function ArticleDetail() {
                         <span>{article.author.name}</span>
                         {article.author.cohort && (
                           <Badge variant="secondary" className="ml-2 text-xs">
-                            Angkatan {article.author.cohort.join(", ")}
+                            Angkatan{" "}
+                            {formatCohortDisplay(article.author.cohort)}
                           </Badge>
                         )}
                       </>

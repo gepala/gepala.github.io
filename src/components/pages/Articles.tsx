@@ -18,6 +18,7 @@ import {
 import { useApp, useAuth } from "../../App";
 import { toast } from "sonner";
 import AdminLoginButton from "../AdminLoginButton";
+import { formatCohortDisplay } from "../../lib/utils";
 
 export default function Articles() {
   const { articles, deleteArticle } = useApp();
@@ -151,7 +152,8 @@ export default function Articles() {
                             <span>{article.author.name}</span>
                             {article.author.cohort && (
                               <Badge variant="secondary" className="text-xs">
-                                Angkatan {article.author.cohort.join(", ")}
+                                Angkatan{" "}
+                                {formatCohortDisplay(article.author.cohort)}
                               </Badge>
                             )}
                           </>

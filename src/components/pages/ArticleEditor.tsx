@@ -463,8 +463,11 @@ export default function ArticleEditor() {
                           setForm((prev) => ({ ...prev, nta: e.target.value }))
                         }
                         className="bg-gray-700 border-gray-600"
-                        placeholder="Contoh: AG001"
+                        placeholder="Contoh: NTAG 16 XXXV 345 TAAB"
                       />
+                      <p className="text-sm text-gray-400 mt-1">
+                        Format: NTAG 16 [Angka Romawi] [Nomor] TAAB
+                      </p>
                     </div>
                   </div>
                 ) : (
@@ -538,7 +541,7 @@ export default function ArticleEditor() {
                               updateCohort(index, e.target.value)
                             }
                             className="bg-gray-700 border-gray-600"
-                            placeholder={`Angkatan ${index + 1}`}
+                            placeholder={`Contoh: 35 (akan ditampilkan sebagai XXXV)`}
                           />
                           {form.cohort.length > 1 && (
                             <Button
@@ -563,6 +566,10 @@ export default function ArticleEditor() {
                         <Plus className="w-4 h-4 mr-2" />
                         Tambah Angkatan
                       </Button>
+                      <p className="text-sm text-gray-400 mt-1">
+                        Masukkan angka biasa (contoh: 35), akan otomatis
+                        dikonversi ke angka romawi (XXXV)
+                      </p>
                     </div>
                   </div>
                 )}

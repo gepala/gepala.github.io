@@ -83,7 +83,7 @@ const mockArticles: Article[] = [
     author: {
       type: "individual",
       name: "John Doe",
-      nta: "AG001",
+      nta: "NTAG 16 XXXV 345 TAAB",
     },
     createdAt: "2024-01-15",
     excerpt: "Panduan lengkap untuk pemula dalam pendakian gunung",
@@ -97,10 +97,37 @@ const mockArticles: Article[] = [
       type: "group",
       name: "Tim Ekspedisi Rinjani",
       members: ["Alice", "Bob", "Charlie"],
-      cohort: ["40", "41"],
+      cohort: ["35", "36"],
     },
     createdAt: "2024-01-10",
     excerpt: "Tips dan trik bertahan hidup di alam bebas",
+  },
+  {
+    id: "3",
+    title: "Pengalaman Mendaki Gunung Bromo",
+    content:
+      "Perjalanan mendaki Gunung Bromo memberikan pengalaman yang tak terlupakan...",
+    author: {
+      type: "individual",
+      name: "Sarah Wilson",
+      nta: "NTAG 16 XL 123 TAAB",
+    },
+    createdAt: "2024-01-05",
+    excerpt: "Cerita perjalanan mendaki Gunung Bromo bersama tim GEPALA",
+  },
+  {
+    id: "4",
+    title: "Latihan Rutin Anggota GEPALA",
+    content:
+      "Latihan rutin merupakan kegiatan wajib bagi setiap anggota GEPALA...",
+    author: {
+      type: "group",
+      name: "Tim Latihan GEPALA",
+      members: ["David", "Emma", "Frank", "Grace"],
+      cohort: ["38", "39", "40"],
+    },
+    createdAt: "2024-01-01",
+    excerpt: "Dokumentasi kegiatan latihan rutin anggota GEPALA",
   },
 ];
 

@@ -1,7 +1,46 @@
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import AdminLoginButton from "../AdminLoginButton";
+import { useEffect } from "react";
 
 export default function About() {
+  useEffect(() => {
+    function clearLogoActive() {
+      document.body.classList.remove("logo-explain-hovering");
+      document.body.classList.remove("logo-explain-hovering-kuning");
+      document
+        .querySelectorAll("[data-logo-part]")
+        .forEach((el) => el.classList.remove("active"));
+    }
+
+    const items = document.querySelectorAll(".logo-explain");
+    items.forEach((item) => {
+      item.addEventListener("mouseenter", function () {
+        clearLogoActive();
+        document.body.classList.add("logo-explain-hovering");
+        const keys =
+          (item as HTMLElement).getAttribute("data-logo")?.split(/\s+/) ?? [];
+        document.querySelectorAll("[data-logo-part]").forEach((el) => {
+          const parts =
+            (el as HTMLElement).getAttribute("data-logo-part")?.split(/\s+/) ??
+            [];
+          if (keys.some((k) => parts.includes(k))) {
+            el.classList.add("active");
+          }
+        });
+      });
+      item.addEventListener("mouseleave", function () {
+        clearLogoActive();
+      });
+    });
+    // Cleanup
+    return () => {
+      items.forEach((item) => {
+        item.removeEventListener("mouseenter", clearLogoActive);
+        item.removeEventListener("mouseleave", clearLogoActive);
+      });
+    };
+  }, []);
+
   return (
     <div className="min-h-screen pt-20">
       {/* Header */}
@@ -35,7 +74,7 @@ export default function About() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-300 leading-relaxed space-y-4">
+                <p className="text-gray-300 leading-relaxed space-y-4 text-justify">
                   Pencinta alam adalah istilah yang dipergunakan untuk
                   kelompok-kelompok yang bergerak di alam bebas, pada bidang
                   petualangan, lingkungan hidup dan konservasi alam, dan
@@ -66,7 +105,7 @@ export default function About() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="text-gray-300 leading-relaxed space-y-4">
+                <div className="text-gray-300 leading-relaxed space-y-4 text-justify">
                   <p>
                     Menurut alm. Norman Edwin dalam tulisannya{" "}
                     <em>"Awibowo – Biang Pencinta Alam Indonesia"</em>
@@ -159,6 +198,8 @@ export default function About() {
                     <p className="text-lg">7. Selesai.</p>
                   </div>
 
+                  <br />
+
                   <div
                     className="text-lg text-gray-300 leading-relaxed text-lg space-y-4 mx-auto"
                     style={{
@@ -196,7 +237,7 @@ export default function About() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="text-gray-300 leading-relaxed space-y-4">
+                <div className="text-gray-300 leading-relaxed space-y-4 text-justify">
                   <p>
                     <strong className="text-yellow-500">GEPALA</strong>{" "}
                     merupakan ekstrakurikuler pecinta alam di SMAN 15 Bandung
@@ -224,7 +265,7 @@ export default function About() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-300 leading-relaxed">
+                <p className="text-gray-300 leading-relaxed text-justify">
                   Awalnya, organisasi ini bernama{" "}
                   <strong className="text-yellow-500">Pelanda Giri</strong>,
                   kemudian berganti menjadi{" "}
@@ -279,35 +320,125 @@ export default function About() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
+                {/* Logo GEPALA */}
+                <div className="logo-logo-container flex justify-center items-start mb-8">
+                  <svg
+                    id="logo-svg"
+                    width="300"
+                    height="300"
+                    viewBox="-1100 -1100 2200 2200"
+                    xmlns="http://www.w3.org/2000/svg"
+                    style={{
+                      display: "block",
+                      width: "300px",
+                      height: "300px",
+                    }}
+                  >
+                    {/* Latar Merah (segiempat, merah) */}
+                    <rect
+                      id="logo-segiempat-merah"
+                      data-logo-part="segiempat merah"
+                      width="1930"
+                      height="1930"
+                      x="-965"
+                      y="-965"
+                      fill="none"
+                      stroke="red"
+                      strokeWidth="70"
+                    />
+                    {/* Latar Biru (biru, segiempat) */}
+                    <rect
+                      id="logo-biru"
+                      data-logo-part="segiempat biru"
+                      width="1860"
+                      height="1860"
+                      x="-930"
+                      y="-930"
+                      fill="darkblue"
+                    />
+                    {/* Garis di antara mata angin (silang, kuning) */}
+                    <g
+                      id="logo-silang-kuning"
+                      data-logo-part="mataangin silang kuning"
+                      stroke="yellow"
+                      strokeWidth="18"
+                    >
+                      <line x1="-400" y1="-20" x2="400" y2="-420" />
+                      <line x1="-400" y1="-420" x2="400" y2="-20" />
+                    </g>
+                    <g
+                      id="logo-silang-kuning2"
+                      data-logo-part="mataangin silang kuning"
+                      stroke="yellow"
+                      strokeWidth="24"
+                    >
+                      <line x1="375" y1="5" x2="415" y2="-50" />
+                      <line x1="375" y1="-445" x2="415" y2="-390" />
+                      <line x1="-375" y1="5" x2="-415" y2="-50" />
+                      <line x1="-375" y1="-445" x2="-415" y2="-390" />
+                    </g>
+                    {/* Mata Angin Vertikal (vertikal, kuning) */}
+                    <g
+                      id="logo-vertikal-kuning"
+                      data-logo-part="mataangin vertikal kuning"
+                      fill="yellow"
+                      stroke="none"
+                    >
+                      <polygon points="0,-770 -200,-570 0,-220 200,-570" />
+                      <polygon points="0,330 205,130 0,-220 -200,130" />
+                    </g>
+                    {/* Mata Angin Horizontal (horizontal, kuning) */}
+                    <g
+                      id="logo-horizontal-kuning"
+                      data-logo-part="mataangin horizontal kuning"
+                      fill="yellow"
+                      stroke="none"
+                    >
+                      <polygon points="900,-220 580,-330 0,-220 580,-110" />
+                      <polygon points="-900,-220 -580,-110 0,-220 -580,-330" />
+                    </g>
+                    <path d="" fill="#FFFF00" transform="translate(0,0)" />
+                    {/* Tulisan GEPALA */}
+                    <image
+                      id="logo-teks"
+                      data-logo-part="teks kuning"
+                      height="2000"
+                      width="2000"
+                      x="-1000"
+                      y="-1000"
+                      href="/logoTeks.png"
+                    />
+                  </svg>
+                </div>
                 <div className="grid md:grid-cols-2 gap-8">
                   <div>
                     <h4 className="text-xl text-yellow-500 mb-4">
                       Arti Lambang
                     </h4>
                     <div className="space-y-3 text-gray-300">
-                      <p>
+                      <p className="logo-explain" data-logo="segiempat">
                         • <strong>Segi empat</strong> melambangkan kesempurnaan
                       </p>
                       <div>
-                        <p>
+                        <p className="logo-explain" data-logo="mataangin">
                           • <strong>Arah mata angin:</strong>
                         </p>
                         <div className="ml-4 space-y-1">
-                          <p>
+                          <p className="logo-explain" data-logo="vertikal">
                             - <strong>Vertikal</strong> melambangkan hubungan
                             antara manusia dengan Tuhan Yang Maha Esa
                           </p>
-                          <p>
+                          <p className="logo-explain" data-logo="horizontal">
                             - <strong>Horizontal</strong> melambangkan hubungan
                             antara manusia dengan manusia
                           </p>
-                          <p>
+                          <p className="logo-explain" data-logo="silang">
                             - <strong>Garis silang</strong> melambangkan
                             hubungan antara manusia dengan lingkungan hidup
                           </p>
                         </div>
                       </div>
-                      <p>
+                      <p className="logo-explain" data-logo="teks">
                         • <strong>Tulisan GEPALA</strong> melambangkan identitas
                         organisasi GEPALA
                       </p>
@@ -319,20 +450,20 @@ export default function About() {
                       Warna Lambang
                     </h4>
                     <div className="space-y-3 text-gray-300">
-                      <p>
+                      <p className="logo-explain" data-logo="kuning">
                         •{" "}
                         <span className="inline-block w-4 h-4 bg-yellow-500 rounded mr-2"></span>
                         <strong>Kuning</strong> melambangkan kehangatan jiwa,
                         lambang cahaya, dan kebahagiaan yang menggambarkan
                         kejayaan, keluhuran budi dan keagungan
                       </p>
-                      <p>
+                      <p className="logo-explain" data-logo="merah">
                         •{" "}
                         <span className="inline-block w-4 h-4 bg-red-500 rounded mr-2"></span>
                         <strong>Merah</strong> melambangkan semangat dan
                         keberanian
                       </p>
-                      <p>
+                      <p className="logo-explain" data-logo="biru">
                         •{" "}
                         <span className="inline-block w-4 h-4 bg-blue-900 rounded mr-2"></span>
                         <strong>Biru tua</strong> melambangkan bahtera,
@@ -342,6 +473,31 @@ export default function About() {
                     </div>
                   </div>
                 </div>
+
+                <style>{`
+  .logo-explain {
+    transition: background 0.3s cubic-bezier(0.4,0,0.2,1);
+    cursor: pointer;
+  }
+  .logo-explain:hover {
+    background-color: rgba(234, 179, 8, 0.12);
+  }
+  #logo-svg [data-logo-part] {
+    opacity: 1;
+    transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1), transform 0.5s cubic-bezier(0.4,0,0.2,1);
+    pointer-events: none;
+    transform: scale(1);
+  }
+  .logo-explain-hovering #logo-svg [data-logo-part] {
+    opacity: 0.05;
+    transform: scale(0.97);
+  }
+  .logo-explain-hovering #logo-svg [data-logo-part].active {
+    opacity: 1;
+    transform: scale(1.1);
+    filter: drop-shadow(20 20 20px rgba(0, 0, 0, 0.53));
+  }
+`}</style>
               </CardContent>
             </Card>
 
@@ -366,7 +522,7 @@ export default function About() {
                   , dan
                   <strong className="text-yellow-500">
                     {" "}
-                    Anggota Kehormatan GEPALA (AK)
+                    Anggota Kehormatan GEPALA (AKG)
                   </strong>
                   .
                 </p>
@@ -403,7 +559,7 @@ export default function About() {
                   <Card className="bg-gray-600 border-gray-500">
                     <CardHeader>
                       <CardTitle className="text-lg text-yellow-500">
-                        Anggota Kehormatan (AK)
+                        Anggota Kehormatan (AKG)
                       </CardTitle>
                     </CardHeader>
                     <CardContent>

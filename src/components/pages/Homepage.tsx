@@ -10,7 +10,6 @@ import {
   Handshake,
   Brain,
   Flag,
-  Trophy,
 } from "lucide-react";
 import { Button } from "../ui/button";
 import { Card, CardContent } from "../ui/card";
@@ -211,7 +210,7 @@ export default function Homepage() {
       <section
         className="h-[100vh] flex items-center justify-center relative bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, 0.8)), url('/public/bg/bg4.png')`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, 0.8)), url('/bg/bg4.png')`,
         }}
       >
         <div className="text-center text-white z-10 px-4">
@@ -269,11 +268,11 @@ export default function Homepage() {
       {/* Sekilas Tentang Kami */}
       <section className="py-20 bg-gray-800">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-6xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl mb-8 text-yellow-500">
               Sekilas Tentang Kami
             </h2>
-            <p className="text-lg text-gray-300 leading-relaxed mb-8">
+            <p className="text-lg text-gray-300 leading-relaxed mb-8 text-justify">
               GEPALA merupakan ekstrakurikuler pecinta alam di SMAN 15 Bandung
               yang sudah berdiri sejak 20 Juli 1982 dan merupakan
               ekstrakurikuler tertua di SMAN 15 Bandung. Selama lebih dari 40
@@ -298,7 +297,7 @@ export default function Homepage() {
           <h2 className="text-3xl md:text-4xl text-center mb-12 text-yellow-500">
             Yang Didapat Dari GEPALA
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
             {benefits.map((benefit, index) => (
               <Card
                 key={index}
@@ -318,40 +317,17 @@ export default function Homepage() {
       {/* Recruitment */}
       <section id="recruitment" className="py-20 bg-gray-800">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-6xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl mb-8 text-yellow-500">
               Bergabunglah Dengan Kami
             </h2>
-            <p className="text-lg text-gray-300 leading-relaxed mb-8">
+            <p className="text-lg text-gray-300 leading-relaxed mb-8 text-justify">
               Apakah kamu siap untuk menjadi bagian dari keluarga besar GEPALA?
               Kami mencari individu yang memiliki semangat petualangan, cinta
               terhadap alam, dan siap untuk mengembangkan diri. Bersama GEPALA,
               kamu akan mendapatkan pengalaman tak terlupakan, teman
               seperjuangan, dan karakter yang kuat.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-              <div className="bg-gray-700 p-6 rounded-lg">
-                <Mountain className="w-8 h-8 text-yellow-500 mx-auto mb-4" />
-                <h3 className="text-lg mb-2">Pengalaman Alam</h3>
-                <p className="text-gray-400 text-sm">
-                  Jelajahi keindahan alam Indonesia dengan panduan berpengalaman
-                </p>
-              </div>
-              <div className="bg-gray-700 p-6 rounded-lg">
-                <Users className="w-8 h-8 text-yellow-500 mx-auto mb-4" />
-                <h3 className="text-lg mb-2">Persaudaraan</h3>
-                <p className="text-gray-400 text-sm">
-                  Bangun ikatan yang kuat dengan sesama pecinta alam
-                </p>
-              </div>
-              <div className="bg-gray-700 p-6 rounded-lg">
-                <Trophy className="w-8 h-8 text-yellow-500 mx-auto mb-4" />
-                <h3 className="text-lg mb-2">Prestasi</h3>
-                <p className="text-gray-400 text-sm">
-                  Raih pengalaman dan prestasi di bidang kepecintaalaman
-                </p>
-              </div>
-            </div>
             <Button
               className="bg-yellow-500 hover:bg-yellow-600 text-black px-8 py-3"
               onClick={() =>
@@ -367,7 +343,7 @@ export default function Homepage() {
       {/* Quote */}
       <section className="py-20 bg-yellow-500">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-6xl mx-auto text-center">
             <blockquote className="text-2xl md:text-3xl text-black italic">
               "GEPALA tidak hanya tabah di awal, GEPALA tidak hanya tabah di
               pertengahan, GEPALA tabah sampai akhir!"
